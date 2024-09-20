@@ -50,6 +50,7 @@ docker rmi -f image_name_or_id
 
 ### TODO #########################################
 Test access to the Ec2 instance via http
+Test repo insertion inside medium main repo
 
 │ Error: ECR Repository (docker-flask) not empty, consider using force_delete: RepositoryNotEmptyException: The repository with name 'docker-flask' in registry with id '891377117276' cannot be deleted because it still contains images
 
