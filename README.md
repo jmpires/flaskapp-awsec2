@@ -49,6 +49,10 @@ docker rmi -f image_name_or_id
 
 
 ### TODO #########################################
+Test access to the Ec2 instance via http
+
+│ Error: ECR Repository (docker-flask) not empty, consider using force_delete: RepositoryNotEmptyException: The repository with name 'docker-flask' in registry with id '891377117276' cannot be deleted because it still contains images
+
 Implement the user creation with <AdministratorAccess> and create the ssh-Keypair with name ???
 Implement the S3 bucket for the tfvars - my-backend-devops101-terraform
 Inject directly the Repository Secrets in github:
