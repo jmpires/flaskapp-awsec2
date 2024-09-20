@@ -49,6 +49,7 @@ docker rmi -f image_name_or_id
 
 
 ### TODO #########################################
+Implement the user creation with <AdministratorAccess> and create the ssh-Keypair with name ???
 Implement the S3 bucket for the tfvars - my-backend-devops101-terraform
 
 ### ##############################################
