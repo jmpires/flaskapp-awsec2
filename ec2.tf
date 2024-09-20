@@ -15,9 +15,12 @@ resource "aws_instance" "private" {
               yum update -y
               yum install -y docker
               systemctl enable docker
-              systemctl start docker
+              systemctl start docker             
               usermod -a -G docker ec2-user
-
+              systemctl start httpd
+              systemctl enable httpd
+              echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
+              
               EOF
 
   tags = {
@@ -46,13 +49,14 @@ resource "aws_security_group" "docker_on_ec2" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+/*
     ingress {
     protocol    = "tcp"
     from_port   = 5000
     to_port     = 5000
     cidr_blocks = ["0.0.0.0/0"]
   }
-
+*/
   egress {
     from_port   = 80
     to_port     = 80
