@@ -42,15 +42,10 @@ docker images
 docker ps
 docker logs flask-app
 
-## Check access to app
-curl http://localhost:5000
-curl http://54.92.148.51:5000
-
 ## Others
 docker stop your_container_name
 docker rm your_container_name
 docker rmi -f image_name_or_id
-
 
 
 ### TODO #########################################
