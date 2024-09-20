@@ -13,7 +13,6 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
   vpc_id                  = aws_vpc.main.id
   availability_zone       = "${var.region}a"
-
 }
 
 # Internet gateway to enable trafic from internet

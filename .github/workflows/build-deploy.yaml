@@ -1,16 +1,16 @@
 name: Build and Push Docker Image to ECR
 
 on:
-  # push:
-  #   paths:
-  #     - 'Src/*'  # Trigger only when Python files change inside the src folder
-  #     - 'Dockerfile' 
-  #   branches:
-  #     - main
+  push:
+    paths:
+      - 'Src/*'  # Trigger only when Python files change inside the src folder
+      - 'Dockerfile' 
+    branches:
+      - main
   workflow_dispatch:
 
 env:
-  AWS_REGION: "ap-south-1"
+  AWS_REGION: "us-east-1"
   AWS_EC2: "docker-ec2-instance"
   ECR_REPO: "docker-flask"
   GIT_SHA: ${{ github.sha }}
@@ -80,4 +80,3 @@ jobs:
             echo "Running container"
             aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com
             docker run -td -p 80:5000 --name flask-app ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPO }}:${{ env.GIT_SHA }}
-            

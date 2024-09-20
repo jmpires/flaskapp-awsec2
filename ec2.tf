@@ -21,7 +21,7 @@ resource "aws_instance" "private" {
               EOF
 
   tags = {
-    "Name" = "docker-ec2-instance"
+    "Name" = "dockerFlask-ec2Instance"
   }
 
 }
@@ -43,6 +43,13 @@ resource "aws_security_group" "docker_on_ec2" {
     protocol    = "tcp"
     from_port   = 80
     to_port     = 80
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+    ingress {
+    protocol    = "tcp"
+    from_port   = 5000
+    to_port     = 5000
     cidr_blocks = ["0.0.0.0/0"]
   }
 
