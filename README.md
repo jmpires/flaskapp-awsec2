@@ -51,6 +51,11 @@ docker rmi -f image_name_or_id
 ### TODO #########################################
 Implement the user creation with <AdministratorAccess> and create the ssh-Keypair with name ???
 Implement the S3 bucket for the tfvars - my-backend-devops101-terraform
+Inject directly the Repository Secrets in github:
+AWS_ACCOUNT_ID - aws sts get-caller-identity --query Account --output text
+AWS_ACCESS_KEY_ID - inside the sshKeyPair file
+AWS_SECRET_ACCESS_KEY - inside the sshKeyPair file
+SSH_PRIVATE_KEY - inside the .pem file
 
 ### ##############################################
 
