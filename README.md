@@ -40,7 +40,7 @@ ssh -i ~/.ssh/docker-demo.pem ec2-user@<your-ec2-public-dns>
 ## Check docker process
 docker images
 docker ps
-docker logs flask-app-container
+docker logs flask-app
 
 ## Check access to app
 curl http://localhost:5000
