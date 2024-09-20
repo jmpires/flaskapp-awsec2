@@ -1,3 +1,23 @@
+# Certificate files #
+#####################
+*.pem
+*.csv
+
+# Terraform files   #
+#####################
+.terraform.lock.hcl
+.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

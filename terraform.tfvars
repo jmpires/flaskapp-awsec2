@@ -1,3 +1,3 @@
 # terraform.tfvars
-ssh_key        = "docker-demo"
+ssh_key        = "ssh-key" 
 tfstate_bucket = "366140438193-terraform-state"
